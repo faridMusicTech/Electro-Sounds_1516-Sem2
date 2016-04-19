@@ -1,3 +1,3 @@
 # Spinning Square Webs
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/7WYRyVIDMLc" frameborder="0" allowfullscreen></iframe>
+[Spinning Square Webs](https://www.youtube.com/watch?v=7WYRyVIDMLc "link title")
