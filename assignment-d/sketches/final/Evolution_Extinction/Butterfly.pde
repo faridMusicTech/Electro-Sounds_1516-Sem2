@@ -1,45 +1,45 @@
 class butterfly {
 
-  float x, y, z;
+  float x, y, z;                      //global variables for butterfly class
   float t, tt;
   float wriggle;
   float wiggle;
   float speed, spreed, speedo;
 
-  butterfly() {
+  butterfly() {                  //constructor for butterfly class
 
     x = random(width);
     y = random(height);
     spreed = random(-3, 3);
   }
 
-  void display() {
+  void display() {              //function for butterfly class
 
-    fft.forward(in.mix);
+    fft.forward(in.mix);            
 
     pushMatrix();
 
-    wriggle = noise(t);
-    wriggle = map(wriggle, 0, 1, -20, 20);
-    t += 0.01;
+    wriggle = noise(t);                        //calls the noise function
+    wriggle = map(wriggle, 0, 1, -20, 20);    //maps ranges from (0 to 1 bits) to (-20 to 20 value)
+    t += 0.01;                                //speed for noise
 
     wiggle = noise(tt);
-    wiggle = map(wiggle, 0, 1, 0, 50);
-    tt += 0.1;
+    wiggle = map(wiggle, 0, 1, 0, 50);        //wiggle is "0"
+    tt += 0.1;                                
 
-    translate(x, y, z);
+    translate(x, y, z);                      //position of body of butterfly
     stroke(255);
     strokeWeight(1);
+    
     pushMatrix();
-    translate(-20, 25);
-
-    sphere(10 + fft.getAvg(10) * 25);
-
-    translate(40, 0);
-
+    translate(-20, 25);                      //position of left wing of butterfly
+    sphere(10 + fft.getAvg(10) * 25);        //expansion of wing with sound reaction
+    
+    translate(40, 0);                        //position of right wing of butterfly
     sphere(10 + fft.getAvg(10) * 25);
     popMatrix();
-    bezier(0, 0, 
+    
+    bezier(0, 0,                             //body of butterfly "wriggling"
       wriggle, wiggle, 
       wriggle, wiggle, 
       0, 50);
@@ -50,12 +50,12 @@ class butterfly {
 
     speed = noise(t);
 
-    y += speed;
-    y += spreed; 
+    y += speed;                  
+    y += spreed;                   //movement of butterfly along the Y-axis
     y %= height;
 
     speedo = random(-2, 2);
-    x += speedo;
+    x += speedo;                   //movement of butterfly along the X-axis
     x %= width;
   }
 }

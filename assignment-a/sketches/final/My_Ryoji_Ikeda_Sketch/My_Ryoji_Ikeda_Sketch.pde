@@ -9,7 +9,7 @@ void draw() {
 
   pushMatrix();
   translate(0, 0);
-  for (int k=0; k<20; k++) {
+  for (int k=0; k<20; k++) {          //segmentation of lines that form columns
 
     line(0+k*50, 0, 0+k*50, 540);
     stroke(0);
@@ -27,7 +27,7 @@ void draw() {
 
   float a = random(2, 5);
 
-  for (int i=0; i<230; i++) {
+  for (int i=0; i<230; i++) {          
     for (int j=0; j<50; j++) {
 
       line(0+j*50, 0+i*a, 50+j*50, 0+i*a);

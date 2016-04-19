@@ -8,6 +8,6 @@ class Box {
     y2 = theY2;
   }
   String toString() {
-    return "["+x1+","+y1+","+x2+","+y2+"]";
+    return "["+x1+","+y1+","+x2+","+y2+"]";    //printing out a line of coordinates for the position of boxes
   }
 }

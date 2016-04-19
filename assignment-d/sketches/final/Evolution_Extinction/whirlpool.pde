@@ -12,7 +12,7 @@ class whirlPool {
 
     pushMatrix();
     translate(w, e, r);
-    for (int i=0; i<700; i++) {
+    for (int i=0; i<700; i++) {      //shape of spinning circles which look like a whirlpool
       rotate(frameCount*0.001);
       fill(200, 0, 0, 100);
       ellipse(i, 0, 10, 10);

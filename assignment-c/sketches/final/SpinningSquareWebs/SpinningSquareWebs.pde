@@ -7,7 +7,7 @@ void setup() {
   smooth();
 
   for (int i=0; i<10; i++) {
-    sws.add(new swoosh());
+    sws.add(new swoosh());            //adding and initializing the class of shape
   }
 }
 
@@ -31,7 +31,7 @@ void draw() {
   translate(width/2, height/2);
   fill(random(255), 10);
   noStroke();
-  sphere(10);
+  sphere(10);                      //sphere in the center of sketch
   lights();
   popMatrix();
 
@@ -39,7 +39,7 @@ void draw() {
   translate(0, 0, 0);
   noStroke();
   fill(random(200), random(50));
-  rect(0, 0, width, height);
+  rect(0, 0, width, height);       //a rectangle canvas for the trail effect
   lights();
   popMatrix();
 
@@ -50,7 +50,7 @@ void draw() {
   translate(width/2, height/2, 0);
   rotateY(frameCount * cos(0.01));
   for (int i=0; i<960; i+= 20) {
-    line(0, 0, -480 + i, 270);
+    line(0, 0, -480 + i, 270);      //lines that form a triangle object that rotates (BOTTOM)
   }
   lights();
   popMatrix();
@@ -58,7 +58,7 @@ void draw() {
   pushMatrix();
   translate(width/2, height/2, 0);
   rotateY(frameCount * cos(-0.01));
-  for (int i=0; i<960; i+= 20) {
+  for (int i=0; i<960; i+= 20) {    //lines that form a triangle object that rotates (TOP)
     line(0, 0, -480 + i, -270);
   }
   lights();
@@ -68,7 +68,7 @@ void draw() {
   translate(width/2, height/2, 0);
   rotateX(frameCount * cos(0.01));
   for (int i=0; i<540; i+= 20) {
-    line(0, 0, -480, -270 + i);
+    line(0, 0, -480, -270 + i);    //lines that form a triangle object that rotates (LEFT)
   }
   lights();
   popMatrix();
@@ -77,7 +77,7 @@ void draw() {
   translate(width/2, height/2, 0);
   rotateX(frameCount * cos(-0.01));
   for (int i=0; i<550; i+= 20) {
-    line(0, 0, 480, -270 + i);
+    line(0, 0, 480, -270 + i);     //lines that form a triangle object that rotates (RIGHT)
   }
   lights();
   popMatrix();
@@ -88,7 +88,7 @@ void draw() {
   keyPressed();
 }
 
-void keyPressed() {
+void keyPressed() {            //keypressed being used to switch in between scenes
 
   if ( key == '1') {
     pushMatrix();
@@ -291,11 +291,11 @@ void keyPressed() {
   }
 
   if (key == '9') {
-    fill(random(255), 200);
+    fill(random(255), 200);        //background flashing effect
     rect(0, 0, width, height);
   }
 
-  if (key == '-') {
+  if (key == '-') {                          //insects being sucked into a hole 
     pushMatrix();
     r = frameCount* random(-0.01, 0.01);
     translate(width/2, height/2);

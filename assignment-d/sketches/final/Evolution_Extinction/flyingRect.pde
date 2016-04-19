@@ -17,7 +17,7 @@ class flyingRect {
     y = random(height);
     pushMatrix();
 
-    translate(x, y, z);
+    translate(x, y, z);              //random positions in the X and Y-axis
     //rotateY(frameCount*0.05);
     fill(200, 0, 0, 100);
     rect(-400, y, 700, 5);

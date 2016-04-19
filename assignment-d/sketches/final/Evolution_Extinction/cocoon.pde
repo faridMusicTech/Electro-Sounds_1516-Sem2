@@ -39,21 +39,21 @@ class cocoon {
       speed *= -1;
     }
 
-    pushMatrix();
+    pushMatrix();              //position of cocoon
     translate(w, h);
     fill(255);
     noStroke();
-    sphere(u);
+    sphere(u);                //most inner sphere(heart)
     popMatrix();
 
     translate(x, y, z);
-    sphereDetail(int(r1), int(r1));
+    sphereDetail(int(r1), int(r1));      //changes of the detail in stroke and shape
 
-    rotateY(frameCount*0.05);
+    rotateY(frameCount*0.05);          
     noFill();
     stroke(255, 0, 0, 200);
     strokeWeight(1);
-    sphere(expand);
+    sphere(expand);                //2nd layer of sphere
     noFill();
     stroke(255, 0, 0, 150);
 
@@ -61,7 +61,7 @@ class cocoon {
     stroke(255, 50);
     rotateY(frameCount*-0.01);
     rotateY(frameCount*-0.01);
-    sphere(200);
+    sphere(200);                    //3rd layer of sphere
 
     scale(1.25);
     stroke(255, 0, 0, 150);
@@ -70,7 +70,7 @@ class cocoon {
     rotateX(frameCount*0.01);
 
     for (int i = 0; i<fft.avgSize(); i++) {
-      sphere(200 + fft.getAvg(i)*(50) );
+      sphere(200 + fft.getAvg(i)*(50) );    //4th outer most layer of sphere with sound reaction
     }
   }
 }

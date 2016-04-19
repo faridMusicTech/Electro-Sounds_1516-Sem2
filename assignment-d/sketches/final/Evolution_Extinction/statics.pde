@@ -14,7 +14,7 @@ class statics {
   void display() {
 
     pushMatrix();
-    translate(width/2, height/2);
+    translate(width/2, height/2);        //position of static
     rotateZ(frameCount*0.01);
 
     h1 = 0;
@@ -34,16 +34,16 @@ class statics {
     //stroke(0,255,0,50);
     stroke(255, 50);
 
-    for (int i=0; i<10; i++) {
-      bezier(-640, h1, 
+    for (int i=0; i<10; i++) {            //10 bezier lines drawing continuously and randomly
+      bezier(-640, h1,                   
         -240, random(-200, 200), 
         240, random(-200, 200), 
         640, h1);
     }
 
-    rotateZ(frameCount*-0.02);
+    rotateZ(frameCount*-0.02);            //rotation of the shape
     for (int i=0; i<10; i++) {
-      bezier(-640, h1, 
+      bezier(-640, h1,                    //2nd similar shape
         -240, random(-200, 200), 
         240, random(-200, 200), 
         640, h1);

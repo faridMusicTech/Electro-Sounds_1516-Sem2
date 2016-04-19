@@ -1,4 +1,4 @@
-class worm {
+class worm {          //acts as rain
 
   float x;
   float y;
@@ -31,12 +31,12 @@ class worm {
     stroke(230, 10);
     for (int i=0; i<fft.avgSize(); i++) {
       //noFill();
-      rect(0 - fft.getAvg(i) * 50, 0, yolo, yoli + fft.getAvg(i) * 50);
+      rect(0 - fft.getAvg(i) * 50, 0, yolo, yoli + fft.getAvg(i) * 50);  //glitchy rain effect with sound reaction
     }
     popMatrix();
   }
 
-  void move() {
+  void move() {      //a function for the movement of rain
 
     y += speed;
     x += speedo;

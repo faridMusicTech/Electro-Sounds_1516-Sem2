@@ -1,10 +1,10 @@
-colors [] myColors = new colors[6];
+colors [] myColors = new colors[6];    //arrays of 6 items
 
 void setup() {
 
   size(960, 540, P3D);
 
-  myColors[0] = new colors(203, 16, 16);
+  myColors[0] = new colors(203, 16, 16);      //items in the array that consist of specific colors
   myColors[1] = new colors(30, 155, 14);
   myColors[2] = new colors(247, 148, 25);
   myColors[3] = new colors(38, 78, 219);
@@ -32,7 +32,7 @@ void draw() {
 
     int a = int (random (40, 50));
 
-    ellipse(0, 0, 1500-a-i*50, 1500-a-i*50);
+    ellipse(0, 0, 1500-a-i*50, 1500-a-i*50);    //layers of ellipses stacking up on top of each other
     noStroke();
     smooth();
   }

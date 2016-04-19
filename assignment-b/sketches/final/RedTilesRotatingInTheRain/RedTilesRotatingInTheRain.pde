@@ -1,17 +1,17 @@
-import codeanticode.syphon.SyphonServer;
+import codeanticode.syphon.SyphonServer;    //importing the syphon library
 
 SyphonServer syphon;
 
 ArrayList <worm> wormy = new ArrayList();
 
-import ddf.minim.analysis.*;
+import ddf.minim.analysis.*;      //importing the minim library
 import ddf.minim.*;
 
 Minim minim;
 AudioInput in;
 FFT fft;
 
-import peasy.*;
+import peasy.*;              //importing the peasyCam library
 
 PeasyCam cam;
 
@@ -20,7 +20,7 @@ float ee = 0;
 float speedo = random(1, 10);
 
 void settings() {
-  size(960, 540, P3D);
+  size(960, 540, P3D);      //settings for the sketch to be mirrored into the syphon program
   //fullScreen(P3D);
   
   PJOGL.profile=1;
@@ -33,7 +33,7 @@ void setup() {
   
   syphon = new SyphonServer( this , "p5-to-syphon" );
   
-  minim = new Minim(this);
+  minim = new Minim(this);                        
   in = minim.getLineIn(Minim.STEREO, 512);
   fft = new FFT(in.bufferSize(), in.sampleRate());
   fft.logAverages(60, 7);
@@ -82,7 +82,7 @@ void draw() {
 
     speedo *= -1;
   }
-  for (int x=-50; x<50; x+=(random(11, 13))) {
+  for (int x=-50; x<50; x+=(random(11, 13))) {           //building the shape that forms a huge square shaped figure consisting of tiles of squares
     for (int y=-50; y<50; y+=(random(11, 13))) {
       for (int z=-50; z<50; z+=(random(11, 13))) {
         pushMatrix();
@@ -96,17 +96,17 @@ void draw() {
   //saveFrame("frames/####.png");
 }
 
-void display() {
+void display() {          //display function
 
   fill(random(50, 200), 0, 0, 10);
   stroke(10);
   box(random(6, 10));
 }
 
-void keyPressed() {
+void keyPressed() {      //keypressed being used to change scenes
   switch(key) {
 
-    case('1'):      
+    case('1'):           //change of background color to maroon
     pushMatrix();
     fill(100, 0, 0, 10);
     translate(0, 0, -300);
@@ -114,7 +114,7 @@ void keyPressed() {
     popMatrix();
     break;
 
-    case('2'):      
+    case('2'):          //change of background color to dark gray
     pushMatrix();
     fill(100, 30);
     translate(0, 0, -300);
@@ -122,7 +122,7 @@ void keyPressed() {
     popMatrix();
     break;
 
-    case('3'):      
+    case('3'):          //change of background color to bright gray
     pushMatrix();
     fill(255, 20);
     translate(0, 0, -300);
@@ -130,7 +130,7 @@ void keyPressed() {
     popMatrix();
     break;
 
-    case('4'):    
+    case('4'):          //change of background color to dark blue
     pushMatrix();
     fill(20, 0, 70, 20);
     translate(0, 0, -300);
@@ -138,7 +138,7 @@ void keyPressed() {
     popMatrix();
     break;
     
-    case('5'):   //randomSeed(10);
+    case('5'):   //randomSeed(10);          //rapid rotations of the rain and tiles
     rotateZ(frameCount*-(random(0.01,0.1)));break;
   }
 }

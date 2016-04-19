@@ -2,7 +2,7 @@ ArrayList<Box> boxes = new ArrayList<Box>();
 
 void setup() {  
   size(960, 540, P2D);
-  boxes.add(new Box(106.0, 273.0, 59.10179, -24.553299));
+  boxes.add(new Box(106.0, 273.0, 59.10179, -24.553299));      //adding boxes at specified positions
   boxes.add(new Box(185.0, 157.0, -43.479202, -76.50971));
   boxes.add(new Box(390.0, 193.0, -37.579094, -5.2502975));
   boxes.add(new Box(568.0, 230.0, -67.02985, 98.33191));
@@ -61,7 +61,7 @@ void draw() {
   }
 }
 
-void FNsquare360() {
+void FNsquare360() {      //lines that form a box shaped object(black lines)
 
   strokeWeight(5);
   stroke(0);
@@ -77,7 +77,7 @@ void FNsquare360() {
   line(80, 0, 80, 80);
 }
 
-void FNsquare90() {
+void FNsquare90() {        //lines that form a box shaped object(gray lines)
 
   strokeWeight(2);
   stroke(80, 80, 80, 60);
@@ -93,10 +93,10 @@ void FNsquare90() {
   line(80, 0, 80, 80);
 }
 
-void mousePressed() {
+void mousePressed() {        //adding more boxes with a click on the left button mouse
   boxes.add(new Box(mouseX, mouseY, random(-100, 100), random(-100, 100)));
 }
 
-void keyPressed() {
+void keyPressed() {          //printing out the coordinates of the boxes when any key is being pressed
   println(boxes);
 }

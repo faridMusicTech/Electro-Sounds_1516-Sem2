@@ -4,7 +4,7 @@ class colors {
   float y = 0;
   float z = 0;
 
-  colors(float R, float G, float B) {
+  colors(float R, float G, float B) {   //values can be substitude here
 
     x = R;
     y = G;

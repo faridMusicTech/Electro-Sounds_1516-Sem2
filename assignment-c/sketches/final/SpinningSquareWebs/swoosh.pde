@@ -15,7 +15,7 @@ class swoosh {
     pushMatrix();
     translate(x, y, z);
     fill(random(50));
-    ellipse(0, 0, 50, 5);
+    ellipse(0, 0, 50, 5);      //shape of insect
     popMatrix();
   }
 
